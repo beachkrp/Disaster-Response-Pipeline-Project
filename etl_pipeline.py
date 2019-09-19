@@ -67,9 +67,11 @@ if __name__ == '__main__':
 
 	#process the categories column
 	df = convert_message(df, "categories")
-	print(df.head())	
+	
 
-
+	#Store database.
+	engine = create_engine(database_file)
+	df.to_sql(table_name, engine, index=False)
 
 	
 
