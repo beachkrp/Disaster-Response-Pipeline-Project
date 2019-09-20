@@ -1,0 +1,27 @@
+{%extends "base.html" %}
+
+{% block content%}
+<form method="POST">
+	
+ {{form.hidden_tag()}}
+ {{form.input_message.label}}{{form.input_message()}}
+ <br>	
+ {% for subfield in form.genre %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>   
+{% endfor %}
+{{form.submit()}}
+</form>
+<p>
+<img src="category_plot.png"> 	
+</p>
+<p>
+	<img src="related.png">
+</p>
+
+
+    
+
+{% endblock%}
